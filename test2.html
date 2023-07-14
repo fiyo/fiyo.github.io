@@ -43,8 +43,9 @@
         // 设置相机位置
         camera.position.z = 5;
 
+        const manager = new THREE.LoadingManager();
         // 创建DRACOLoader实例
-        const dracoLoader = new THREE.DRACOLoader();
+        const dracoLoader = new THREE.DRACOLoader(manager);
         dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.4.1/');
 
         // 使用GLTFLoader加载GLB模型
