@@ -11,13 +11,13 @@
 <body>
     <div id="map"></div>
 
-    <script src="https://unpkg.com/three@0.126.0/build/three.min.js"></script>
-    <script src="https://unpkg.com/three/examples/js/loaders/GLTFLoader.js"></script>
-    <script type="module" src="js/loaders/DRACOLoader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.131.2/build/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.131.2/examples/js/loaders/GLTFLoader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.131.2/examples/js/loaders/DRACOLoader.js"></script>
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
 
     <script>
-        mapboxgl.accessToken = 'YOUR_MAPBOX_ACCESS_TOKEN';
+        mapboxgl.accessToken = 'pk.eyJ1Ijoid2ZneWoiLCJhIjoiY2pzem53NWVvMWZyaTN5b2R3NDB5ZGRjciJ9.qBQqTXDt_CGKPydSZ-5LGg';
 
         // 初始化Mapbox地图
         const map = new mapboxgl.Map({
@@ -45,8 +45,7 @@
 
         const manager = new THREE.LoadingManager();
         // 创建DRACOLoader实例
-        const dracoLoader = new DRACOLoader(manager);
-        dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.4.1/');
+        const dracoLoader = new THREE.DRACOLoader();
 
         // 使用GLTFLoader加载GLB模型
         const loader = new THREE.GLTFLoader();
