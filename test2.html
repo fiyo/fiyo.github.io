@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Three.js + Mapbox GL - Load GLB Model</title>
+    <style>
+        body { margin: 0; }
+        #map { position: absolute; top: 0; bottom: 0; width: 100%; }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/three"></script>
+    <script src="https://unpkg.com/three/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.4.1/mapbox-gl.js"></script>
+
+    <script>
+        mapboxgl.accessToken = 'pk.eyJ1Ijoid2ZneWoiLCJhIjoiY2pzem53NWVvMWZyaTN5b2R3NDB5ZGRjciJ9.qBQqTXDt_CGKPydSZ-5LGg';
+
+        // 初始化Mapbox地图
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11',
+            center: [0, 0], // 设置地图中心点的经纬度
+            zoom: 12 // 设置地图缩放级别
+        });
+
+        // 创建Three.js场景
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // 创建一个简单的立方体
+        const geometry = new THREE.BoxGeometry();
+        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+        const cube = new THREE.Mesh(geometry, material);
+        scene.add(cube);
+
+        // 设置相机位置
+        camera.position.z = 5;
+
+        // 使用GLTFLoader加载GLB模型
+        const loader = new THREE.GLTFLoader();
+        loader.load('models/dui_chang.glb', function (gltf) {
+            scene.add(gltf.scene);
+        }, undefined, function (error) {
+            console.error(error);
+        });
+
+        // 渲染函数
+        function animate() {
+            requestAnimationFrame(animate);
+            cube.rotation.x += 0.01;
+            cube.rotation.y += 0.01;
+            renderer.render(scene, camera);
+        }
+        animate();
+    </script>
+</body>
+</html>
