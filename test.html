@@ -73,9 +73,8 @@ this.scene.add(directionalLight2);
  
 // use the three.js GLTF loader to add the 3D model to the three.js scene
 const loader = new THREE.GLTFLoader();
-loader.setPath( 'models/').setDRACOLoader( new DRACOLoader().setDecoderPath( 'js/libs/draco/gltf/' ) )
 loader.load(
-  'dui_chang.glb',
+  'https://yunshangshanxi.com/models/dui_chang.gltf',
   (gltf) => {
     this.scene.add(gltf.scene);
   }
