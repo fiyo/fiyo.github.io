@@ -45,7 +45,7 @@
 
         const manager = new THREE.LoadingManager();
         // 创建DRACOLoader实例
-        const dracoLoader = new THREE.DRACOLoader(manager);
+        const dracoLoader = new DRACOLoader(manager);
         dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.4.1/');
 
         // 使用GLTFLoader加载GLB模型
