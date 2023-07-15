@@ -100,10 +100,11 @@
             dracoLoader.setDecoderConfig({ type: "js" }); //使用兼容性强的draco_decoder.js解码器
             dracoLoader.preload();
 
-            const loader = new GLTFLoader().setPath(path);
+            const loader = new GLTFLoader();
             loader.setDRACOLoader(dracoLoader);
+
             return new Promise((res, rj) => {
-                loader.load(modelName, (gltf) => {
+                loader.load(path+modelName, (gltf) => {
                     if (setCenter) {
                         gltf.scene.traverse(function(child) {
                             if (setCenter && child.isMesh) {
