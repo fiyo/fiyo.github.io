@@ -46,11 +46,13 @@
         const manager = new THREE.LoadingManager();
         // 创建DRACOLoader实例
         const dracoLoader = new THREE.DRACOLoader();
-
+        dracoLoader.setDecoderPath("./js/draco/"); // 设置public下的解码路径，注意最后面的/
+        dracoLoader.setDecoderConfig({ type: "js" }); //使用兼容性强的draco_decoder.js解码器
+        dracoLoader.preload();
         // 使用GLTFLoader加载GLB模型
         const loader = new THREE.GLTFLoader();
         loader.setDRACOLoader(dracoLoader);
-        loader.load('https://yunshangshanxi.com/models/dui_chang.gltf', function (gltf) {
+        loader.load('https://yunshangshanxi.com/models/dui_chang.glb', function (gltf) {
             scene.add(gltf.scene);
         }, undefined, function (error) {
             console.error(error);
