@@ -43,7 +43,7 @@
         // 设置相机位置
         camera.position.z = 5;
 
-        const manager = new THREE.LoadingManager();
+        // const manager = new THREE.LoadingManager();
         // 创建DRACOLoader实例
         // const dracoLoader = new THREE.DRACOLoader();
         // dracoLoader.setDecoderPath("./js/draco/gltf"); // 设置public下的解码路径，注意最后面的/
@@ -94,7 +94,8 @@
             } else {
                 positionVec3 = new THREE.Vector3(position.x, position.y, position.z);
             }
-            let dracoLoader = new DRACOLoader();
+            const manager = new THREE.LoadingManager();
+            let dracoLoader = new  THREE.DRACOLoader(manager);
             dracoLoader.setDecoderPath("./js/draco/"); // 设置public下的解码路径，注意最后面的/
             dracoLoader.setDecoderConfig({ type: "js" }); //使用兼容性强的draco_decoder.js解码器
             dracoLoader.preload();
