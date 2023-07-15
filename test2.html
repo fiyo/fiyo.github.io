@@ -100,7 +100,7 @@
             dracoLoader.setDecoderConfig({ type: "js" }); //使用兼容性强的draco_decoder.js解码器
             dracoLoader.preload();
 
-            const loader = new GLTFLoader();
+            const loader = new THREE.GLTFLoader();
             loader.setDRACOLoader(dracoLoader);
 
             return new Promise((res, rj) => {
