@@ -101,17 +101,28 @@
 
         // 渲染函数
         function animate() {
-            // requestAnimationFrame(animate);
-            // cube.rotation.x += 0.01;
-            // cube.rotation.y += 0.01;
-            // renderer.render(scene, camera);
+            requestAnimationFrame(animate);
             cube.rotation.x += 0.01;
             cube.rotation.y += 0.01;
-            cube.rotation.z += 0.01;
-            renderer.render( scene, camera )
-            requestAnimationFrame( animate );
+            renderer.render(scene, camera);
         }
 
+        let T0 = new Date();//上次时间
+        function render() {
+            let T1 = new Date();//本次时间
+            let t = T1-T0;//时间差
+            T0 = T1;//把本次时间赋值给上次时间
+            // requestAnimationFrame(render);
+            // renderer.render(scene,camera);//执行渲染操作
+            // mesh.rotateY(0.001*t);//旋转角速度0.001弧度每毫秒
+
+            requestAnimationFrame(animate);
+            cube.rotation.x += 0.01*t;
+            cube.rotation.y += 0.01*t;
+            renderer.render(scene, camera);
+
+        }
+        // render();
         /**
          * 
          *  path:存放模型父路径
@@ -171,7 +182,8 @@
         //     });
         // }
         //loadModuleByDRACOLoader('./models/', "dui_chang.glb", false, 1, 0)
-        animate();
+        //animate();
+        setInterval("render()",200);
     </script>
 </body>
 </html>
