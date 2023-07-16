@@ -40,7 +40,7 @@
         const cube = new THREE.Mesh(geometry, material);
         scene.add(cube);
 
-
+        let tb;
         map.on('load', function() {    
           map.addLayer({
            id: 'custom_layer',
