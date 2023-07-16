@@ -41,10 +41,8 @@
         scene.add(cube);
 
 
-        
-
-
-        map.addLayer({
+        map.on('styledata', function() {    
+          map.addLayer({
            id: 'custom_layer',
            type: 'custom',
            onAdd: function (map, mbxContext) {
@@ -70,6 +68,10 @@
            }
        });
 
+         });
+
+
+        
         // 设置相机位置
         camera.position.z = 5;
 
