@@ -75,7 +75,34 @@
         let cubeMaterial = new THREE.MeshLambertMaterial({ color: 0x00ffff });
         cube = new THREE.Mesh(cubeGeometry, cubeMaterial);
         scene.add(cube);
-        
+
+
+        map.addLayer({
+           id: 'custom_layer',
+           type: 'custom',
+           onAdd: function (map, mbxContext) {
+               tb = new Threebox(
+                   map,
+                   mbxContext,
+                   { defaultLights: true }
+               );
+               let geometry = new THREE.BoxGeometry(20, 20, 20);
+               let redMaterial = new THREE.MeshPhongMaterial({
+                   color: 0x009900,
+                   // side: THREE.DoubleSide
+               });
+               let cube = new THREE.Mesh(geometry, redMaterial);
+               // 单位设置为米
+               cube = tb.Object3D({ obj: cube, units: 'meters', })
+                   .setCoords([120.6827139, 31.2970519, 50]) // 经纬度，高度为米
+
+               tb.add(cube)
+           },
+           render: function (gl, matrix) {
+               tb.update();
+           }
+       });
+       
         // 设置相机位置
         camera.position.z = 5;
 
