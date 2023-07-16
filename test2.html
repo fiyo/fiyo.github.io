@@ -117,8 +117,8 @@
             // mesh.rotateY(0.001*t);//旋转角速度0.001弧度每毫秒
 
             requestAnimationFrame(animate);
-            cube.rotation.x += 0.01*t;
-            cube.rotation.y += 0.01*t;
+            cube.rotation.x += 0.001*t;
+            cube.rotation.y += 0.001*t;
             renderer.render(scene, camera);
 
         }
@@ -183,7 +183,7 @@
         // }
         //loadModuleByDRACOLoader('./models/', "dui_chang.glb", false, 1, 0)
         //animate();
-        setInterval("render()",200);
+        setInterval("render()",1000);
     </script>
 </body>
 </html>
