@@ -36,11 +36,16 @@
         document.body.appendChild(renderer.domElement);
 
         // 创建一个简单的立方体
-        const geometry = new THREE.BoxGeometry();
-        const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-        const cube = new THREE.Mesh(geometry, material);
-        scene.add(cube);
-
+        // const geometry = new THREE.BoxGeometry();
+        // const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
+        // const cube = new THREE.Mesh(geometry, material);
+        // scene.add(cube);
+        const geometry = new THREE.BoxGeometry(200, 200, 200);
+        const redMaterial = new THREE.MeshPhongMaterial({
+                   color: 0x009900,
+                   // side: THREE.DoubleSide
+               });
+        const cube = new THREE.Mesh(geometry, redMaterial);
         let tb;
         map.on('load', function() {    
           map.addLayer({
@@ -52,12 +57,12 @@
                    mbxContext,
                    { defaultLights: true }
                );
-               let geometry = new THREE.BoxGeometry(200, 200, 200);
-               let redMaterial = new THREE.MeshPhongMaterial({
-                   color: 0x009900,
-                   // side: THREE.DoubleSide
-               });
-               let cube = new THREE.Mesh(geometry, redMaterial);
+              //  let geometry = new THREE.BoxGeometry(200, 200, 200);
+              //  let redMaterial = new THREE.MeshPhongMaterial({
+              //      color: 0x009900,
+              //      // side: THREE.DoubleSide
+              //  });
+               //let cube = new THREE.Mesh(geometry, redMaterial);
                // 单位设置为米
                cube = tb.Object3D({ obj: cube, units: 'meters', })
                    .setCoords([120.6827139, 31.2970519, 50]) // 经纬度，高度为米
