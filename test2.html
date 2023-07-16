@@ -47,8 +47,7 @@
                });
         let cube = new THREE.Mesh(geometry, redMaterial);
 
-        cube = tb.Object3D({ obj: cube, units: 'meters', })
-                   .setCoords([120.6827139, 31.2970519, 50]) // 经纬度，高度为米
+       
         let tb;
         map.on('load', function() {    
           map.addLayer({
@@ -69,7 +68,8 @@
               //  // 单位设置为米
               //  cube = tb.Object3D({ obj: cube, units: 'meters', })
               //      .setCoords([120.6827139, 31.2970519, 50]) // 经纬度，高度为米
-
+              cube = tb.Object3D({ obj: cube, units: 'meters', })
+                   .setCoords([120.6827139, 31.2970519, 50]) // 经纬度，高度为米
                tb.add(cube)
            },
            render: function (gl, matrix) {
