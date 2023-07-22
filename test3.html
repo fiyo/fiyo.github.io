@@ -99,6 +99,14 @@
     });
     const torusMesh = new THREE.Mesh(torusGeometry, torusMaterial);
     scene.add(torusMesh);
+
+
+    const targetScale = Math.random() * 1.5 + 0.5;
+      const tween = new TWEEN.Tween(torusMesh.scale)
+        .to({ x: targetScale, y: targetScale, z: targetScale }, 2000)
+        .easing(TWEEN.Easing.Quadratic.Out)
+        .onComplete(() => animateTorus())
+        .start();
   }
     // 设置相机位置和控制
     camera.position.z = 5;
@@ -106,15 +114,15 @@
     //controls.update(); // 更新控制器
 
     // 动画效果
-    function animateTorus() {
-      const targetScale = Math.random() * 1.5 + 0.5;
-      const tween = new TWEEN.Tween(torusMesh.scale)
-        .to({ x: targetScale, y: targetScale, z: targetScale }, 2000)
-        .easing(TWEEN.Easing.Quadratic.Out)
-        .onComplete(() => animateTorus())
-        .start();
-    }
-    animateTorus();
+    // function animateTorus() {
+    //   const targetScale = Math.random() * 1.5 + 0.5;
+    //   const tween = new TWEEN.Tween(torusMesh.scale)
+    //     .to({ x: targetScale, y: targetScale, z: targetScale }, 2000)
+    //     .easing(TWEEN.Easing.Quadratic.Out)
+    //     .onComplete(() => animateTorus())
+    //     .start();
+    // }
+    //animateTorus();
 
     // 渲染场景
     function animate() {
