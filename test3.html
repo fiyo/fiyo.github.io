@@ -60,7 +60,7 @@
     // 添加3D文字
     const fontLoader = new THREE.FontLoader();
     fontLoader.load('https://yunshangshanxi.com/sszht.ttf', function (font) {
-      const textGeometry = new THREE.TextGeometry('g企业介绍', {
+      const textGeometry = new THREE.TextGeometry('企业介绍', {
         font: font,
         size: 0.5,
         height: 0.2,
@@ -76,6 +76,12 @@
       scene.add(textMesh);
       textMesh.position.set(-2, 0, -5);
     });
+
+    // 添加建筑
+    const buildingGeometry = new THREE.BoxGeometry(1, 2, 1);
+    const buildingMaterial = new THREE.MeshStandardMaterial({ color: 0x808080 });
+    const buildingMesh = new THREE.Mesh(buildingGeometry, buildingMaterial);
+    scene.add(buildingMesh);
 
     // 添加多个不同大小的圆环套在一起
     const torusMeshes = [];
@@ -114,11 +120,11 @@
       torusMeshes.forEach((torusMesh) => {
         const targetScale = Math.random() * 1.5 + 0.5;
         const tween = new TWEEN.Tween(torusMesh.scale)
-          .to({ x: targetScale, y: targetScale, z: targetScale }, 1000)
+          .to({ x: targetScale, y: targetScale, z: targetScale }, 2000)
           .easing(TWEEN.Easing.Quadratic.Out)
           .start();
       });
-      setTimeout(animateTorus, 1000); // 3秒后再次执行动画
+      setTimeout(animateTorus, 3000); // 3秒后再次执行动画
     }
     animateTorus();
 
