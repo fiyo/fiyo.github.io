@@ -111,9 +111,11 @@
     }
 
     // 设置相机位置和控制
-    camera.position.z = 5;
-    //const controls = new THREE.OrbitControls(camera, renderer.domElement);
-    //controls.update(); // 更新控制器
+    // 设置相机位置和控制
+    camera.position.set(0, 5, 0);
+    camera.lookAt(0, 0, 0);
+    const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.update(); // 更新控制器
 
     // 动画效果
     function animateTorus() {
@@ -131,7 +133,7 @@
     // 渲染场景
     function animate() {
       requestAnimationFrame(animate);
-      //controls.update();
+      controls.update();
       renderer.render(scene, camera);
       TWEEN.update();
     }
