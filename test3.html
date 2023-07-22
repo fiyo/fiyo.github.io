@@ -8,6 +8,7 @@
     body {
       margin: 0;
       overflow: hidden;
+      font-family: "黑体", sans-serif;
     }
     canvas {
       display: block;
@@ -40,6 +41,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/OrbitControls.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/17.1.1/Tween.min.js"></script>
+  <link rel="stylesheet" href="font.css">
   <script>
     // Three.js场景初始化
     const scene = new THREE.Scene();
@@ -58,7 +60,7 @@
     // 添加3D文字
     const fontLoader = new THREE.FontLoader();
     fontLoader.load('sszht.ttf', function (font) {
-      const textGeometry = new THREE.TextGeometry('GeShi 企业介绍', {
+      const textGeometry = new THREE.TextGeometry('g企业介绍', {
         font: font,
         size: 0.5,
         height: 0.2,
@@ -69,60 +71,56 @@
         bevelOffset: 0,
         bevelSegments: 5
       });
-      const textMaterial = new THREE.MeshStandardMaterial({ color: 0xffff00 });
+      const textMaterial = new THREE.MeshStandardMaterial({ color: 0x00ff00 });
       const textMesh = new THREE.Mesh(textGeometry, textMaterial);
       scene.add(textMesh);
       textMesh.position.set(-2, 0, -5);
     });
 
-    // 添加发光的圆环
     // 添加多个不同大小的圆环套在一起
+    const torusMeshes = [];
     for (let i = 0; i < 10; i++) {
-    const torusGeometry = new THREE.TorusGeometry(1 +i*0.1, 0.2, 16, 100);
-    const torusMaterial = new THREE.ShaderMaterial({
-      vertexShader: `
-        varying vec2 vUv;
-        void main() {
-          vUv = uv;
-          gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
-        }
-      `,
-      fragmentShader: `
-        varying vec2 vUv;
-        void main() {
-          vec3 color = mix(vec3(0.2, 0.7, 1.0), vec3(0.5, 1.0, 1.0), vUv.y);
-          gl_FragColor = vec4(color, 1.0);
-        }
-      `,
-      transparent: true,
-      side: THREE.DoubleSide
-    });
-    const torusMesh = new THREE.Mesh(torusGeometry, torusMaterial);
-    scene.add(torusMesh);
+      const torusGeometry = new THREE.TorusGeometry(1 + i * 0.1, 0.2, 16, 100);
+      const torusMaterial = new THREE.ShaderMaterial({
+        vertexShader: `
+          varying vec2 vUv;
+          void main() {
+            vUv = uv;
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+          }
+        `,
+        fragmentShader: `
+          varying vec2 vUv;
+          void main() {
+            vec3 color = mix(vec3(0.5, 0.7, 1.0), vec3(0.8, 0.9, 1.0), vUv.y);
+            gl_FragColor = vec4(color, 1.0);
+          }
+        `,
+        transparent: true,
+        side: THREE.DoubleSide
+      });
+      const torusMesh = new THREE.Mesh(torusGeometry, torusMaterial);
+      scene.add(torusMesh);
+      torusMeshes.push(torusMesh);
+    }
 
-
-    const targetScale = Math.random() * 1.5 + 0.5;
-      const tween = new TWEEN.Tween(torusMesh.scale)
-        .to({ x: targetScale, y: targetScale, z: targetScale }, 2000)
-        .easing(TWEEN.Easing.Quadratic.Out)
-        .onComplete(() => animateTorus())
-        .start();
-  }
     // 设置相机位置和控制
     camera.position.z = 5;
     //const controls = new THREE.OrbitControls(camera, renderer.domElement);
     //controls.update(); // 更新控制器
 
     // 动画效果
-    // function animateTorus() {
-    //   const targetScale = Math.random() * 1.5 + 0.5;
-    //   const tween = new TWEEN.Tween(torusMesh.scale)
-    //     .to({ x: targetScale, y: targetScale, z: targetScale }, 2000)
-    //     .easing(TWEEN.Easing.Quadratic.Out)
-    //     .onComplete(() => animateTorus())
-    //     .start();
-    // }
-    //animateTorus();
+    function animateTorus() {
+      torusMeshes.forEach((torusMesh) => {
+        const targetScale = Math.random() * 1.5 + 0.5;
+        const tween = new TWEEN.Tween(torusMesh.scale)
+          .to({ x: targetScale, y: targetScale, z: targetScale }, 2000)
+          .easing(TWEEN.Easing.Quadratic.Out)
+          .start();
+      });
+      setTimeout(animateTorus, 3000); // 3秒后再次执行动画
+    }
+    animateTorus();
 
     // 渲染场景
     function animate() {
