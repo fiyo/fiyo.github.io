@@ -61,6 +61,7 @@
     // 设置相机位置和控制
     camera.position.z = 5;
     const controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.update(); // 更新控制器
 
     // 渲染场景
     function animate() {
