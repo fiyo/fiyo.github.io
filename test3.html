@@ -112,7 +112,7 @@
     // 动画效果
     function animateTorus() {
       torusMeshes.forEach((torusMesh) => {
-        const targetScale = Math.random() * 1.5 + 0.5;
+        const targetScale = Math.random() * 1.5 + 1.5;
         const tween = new TWEEN.Tween(torusMesh.scale)
           .to({ x: targetScale, y: targetScale, z: targetScale }, 2000)
           .easing(TWEEN.Easing.Quadratic.Out)
