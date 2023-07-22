@@ -39,7 +39,6 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/OrbitControls.min.js"></script>
-  <script src="https://unpkg.com/three.meshui"></script>
   <script>
     // Three.js场景初始化
     const scene = new THREE.Scene();
@@ -75,11 +74,11 @@
       textMesh.position.set(-2, 0, -5);
     });
 
-    // 添加一个简单的3D盒子模型
-    const geometry = new THREE.BoxGeometry();
-    const material = new THREE.MeshStandardMaterial({ color: 0x0000ff });
-    const cube = new THREE.Mesh(geometry, material);
-    scene.add(cube);
+    // 添加发光的圆环
+    const torusGeometry = new THREE.TorusGeometry(1, 0.2, 16, 100);
+    const torusMaterial = new THREE.MeshBasicMaterial({ color: 0xff0000, transparent: true, opacity: 0.8, side: THREE.DoubleSide });
+    const torusMesh = new THREE.Mesh(torusGeometry, torusMaterial);
+    scene.add(torusMesh);
 
     // 设置相机位置和控制
     camera.position.z = 5;
@@ -89,8 +88,8 @@
     // 渲染场景
     function animate() {
       requestAnimationFrame(animate);
-      cube.rotation.x += 0.01;
-      cube.rotation.y += 0.01;
+      torusMesh.rotation.x += 0.01;
+      torusMesh.rotation.y += 0.01;
       //controls.update();
       renderer.render(scene, camera);
     }
