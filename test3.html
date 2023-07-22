@@ -39,6 +39,7 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/OrbitControls.min.js"></script>
+  <script src="https://unpkg.com/three.meshui"></script>
   <script>
     // Three.js场景初始化
     const scene = new THREE.Scene();
@@ -56,7 +57,7 @@
 
     // 添加3D文字
     const fontLoader = new THREE.FontLoader();
-    fontLoader.load('https://threejs.org/examples/fonts/helvetiker_regular.typeface.json', function (font) {
+    fontLoader.load('https://threejs.org/examples/fonts/helvetiker_bold.typeface.json', function (font) {
       const textGeometry = new THREE.TextGeometry('企业介绍', {
         font: font,
         size: 0.5,
