@@ -500,9 +500,15 @@ margin-bottom:50px;
 }
 
 h4{
+text-align:center;
+color:#A0CC59;
+font-size:20px;
+margin-bottom:50px;
+}
+h5{
   text-align:center;
-  color:#A0CC59;
-  font-size:20px;
+  color:#EFA52C;
+  font-size:12px;
   margin-bottom:50px;
   }
 
