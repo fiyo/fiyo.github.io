@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.yssx.warehouse.app",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 39,
+      "versionName": "20231027083117",
+      "outputFile": "yssx_20231027083118.apk"
+    }
+  ],
+  "elementType": "File"
+}
