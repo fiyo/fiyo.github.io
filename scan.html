@@ -98,7 +98,7 @@
                 let qrCode = result.text;
                 //set(result.text)
                 document.getElementById('result').textContent = qrCode
-                post("https://springboot-ef1p-76377-5-1308372560.sh.run.tcloudbase.com/api/qrcode",{"qrCode": qrCode})
+                post("https://springboot-ef1p-76377-5-1308372560.sh.run.tcloudbase.com/api/qrcode",{"qrCode": "\""+qrCode+"\""})
 
                 codeReader.reset()
               }
@@ -153,6 +153,8 @@
             var json = httpRequest.responseText;//获取到服务端返回的数据
             console.log(json);
             document.getElementById('product').textContent = json;
+        }else{
+          document.getElementById('product').textContent = httpRequest.readyState;
         }
     };
   }
