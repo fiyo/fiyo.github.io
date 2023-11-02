@@ -154,7 +154,7 @@
             console.log(json);
             document.getElementById('product').textContent = json;
         }else{
-          document.getElementById('product').textContent = httpRequest.readyState + "" + httpRequest.status;
+          document.getElementById('product').textContent = httpRequest.readyState + " " + httpRequest.status;
         }
     };
   }
