@@ -44,9 +44,10 @@
             </select>
         </div>
 
-        <label>结果:</label>
+        <label>防伪码:</label>
         <pre><code id="result"></code></pre>
-
+        <label>产品信息:</label>
+        <pre><code id="product"></code></pre>
     </section>
 
     <footer class="footer">
@@ -132,7 +133,7 @@
     }).done(function (res) {
       if (res && res.data !== undefined) {
         //$(".result").html(res.data);
-        document.getElementById('result').textContent = res.data;
+        document.getElementById('product').textContent = res.data;
       }
     });
   }
