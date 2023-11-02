@@ -70,9 +70,11 @@
           if (videoInputDevices.length >= 1) {
             videoInputDevices.forEach((element) => {
               const sourceOption = document.createElement('option')
-              sourceOption.text = element.deviceId+"|"+element.label
+              sourceOption.text = element.label
               sourceOption.value = element.deviceId
-              //sourceOption.selected = "selected"
+              if(element.label.indexOf("facing back") != -1){
+                sourceOption.selected = "selected"
+              }
               sourceSelect.appendChild(sourceOption)
             })
 
