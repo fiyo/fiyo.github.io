@@ -94,7 +94,7 @@
             codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err) => {
               if (result) {
                 console.log(result)
-                document.getElementById('result').textContent = result.text
+                //document.getElementById('result').textContent = result.text
                 set(result.text)
               }
               if (err && !(err instanceof ZXing.NotFoundException)) {
@@ -120,7 +120,7 @@
 
 
     function set(qrCode) {
-    $.ajax("/api/qrcode", {
+    $.ajax("https://springboot-ef1p-76377-5-1308372560.sh.run.tcloudbase.com/api/qrcode", {
       method: "POST",
       contentType: "application/json; charset=utf-8",
       dataType: "json",
@@ -130,7 +130,7 @@
     }).done(function (res) {
       if (res && res.data !== undefined) {
         $(".result").html(res.data);
-        //document.getElementById('result').textContent = res.data;
+        document.getElementById('result').textContent = res.data;
       }
     });
   }
