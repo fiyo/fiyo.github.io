@@ -94,8 +94,9 @@
             codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err) => {
               if (result) {
                 console.log(result)
-                //document.getElementById('result').textContent = result.text
+
                 set(result.text)
+                document.getElementById('result').textContent = result.text
               }
               if (err && !(err instanceof ZXing.NotFoundException)) {
                 console.error(err)
@@ -129,7 +130,7 @@
       }),
     }).done(function (res) {
       if (res && res.data !== undefined) {
-        $(".result").html(res.data);
+        //$(".result").html(res.data);
         document.getElementById('result').textContent = res.data;
       }
     });
