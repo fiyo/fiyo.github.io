@@ -86,8 +86,8 @@
               selectedDeviceId = sourceSelect.value;
             };
 
-            const sourceSelectPanel = document.getElementById('sourceSelectPanel')
-            sourceSelectPanel.style.display = 'block'
+            // const sourceSelectPanel = document.getElementById('sourceSelectPanel')
+            // sourceSelectPanel.style.display = 'block'
           }
 
           document.getElementById('startButton').addEventListener('click', () => {
@@ -97,6 +97,7 @@
 
                 set(result.text)
                 document.getElementById('result').textContent = result.text
+                codeReader.reset()
               }
               if (err && !(err instanceof ZXing.NotFoundException)) {
                 console.error(err)
