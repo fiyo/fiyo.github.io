@@ -801,6 +801,8 @@
                 <img src="images/logo-white.png" width="50px" alt="云端漫步">
                 <i class="fas fa-drone logo-icon"></i>
                 <h1>云端漫步航空</h1>
+                <audio id="bgMusic" src="云端漫步之歌.mp3" autoplay loop></audio>
+                <button onclick="document.getElementById('bgMusic').muted = !document.getElementById('bgMusic').muted;">静音</button>
             </div>
             <ul class="nav-links">
                 <li><a href="#home">首页</a></li>
@@ -1228,5 +1230,6 @@
         
         addDrones();
     </script>
+    
 </body>
 </html>
