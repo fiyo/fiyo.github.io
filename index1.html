@@ -16,29 +16,29 @@
             --light: #ffffff;
             --neon: #ff2a6d;
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Orbitron', sans-serif;
         }
-        
+
         html {
             scroll-behavior: smooth;
         }
-        
+
         body {
             background-color: var(--darker);
             color: var(--light);
             overflow-x: hidden;
             line-height: 1.6;
-            background-image: 
+            background-image:
                 radial-gradient(circle at 10% 20%, rgba(0, 243, 255, 0.05) 0%, transparent 20%),
                 radial-gradient(circle at 90% 60%, rgba(255, 42, 109, 0.05) 0%, transparent 20%),
                 radial-gradient(circle at 50% 80%, rgba(5, 217, 232, 0.05) 0%, transparent 20%);
         }
-        
+
         /* 导航栏 */
         header {
             position: fixed;
@@ -52,7 +52,7 @@
             transition: all 0.5s ease;
             border-bottom: 1px solid rgba(0, 243, 255, 0.2);
         }
-        
+
         nav {
             display: flex;
             justify-content: space-between;
@@ -61,19 +61,19 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
         }
-        
+
         .logo-icon {
             color: var(--primary);
             font-size: 2rem;
             margin-right: 10px;
             animation: pulse 2s infinite;
         }
-        
+
         .logo h1 {
             font-size: 1.8rem;
             background: linear-gradient(90deg, var(--primary), var(--accent));
@@ -83,16 +83,16 @@
             text-transform: uppercase;
             letter-spacing: 2px;
         }
-        
+
         .nav-links {
             display: flex;
             list-style: none;
         }
-        
+
         .nav-links li {
             margin-left: 30px;
         }
-        
+
         .nav-links a {
             text-decoration: none;
             color: var(--light);
@@ -101,7 +101,7 @@
             transition: all 0.3s ease;
             position: relative;
         }
-        
+
         .nav-links a:after {
             content: '';
             position: absolute;
@@ -112,22 +112,22 @@
             background: var(--primary);
             transition: width 0.3s ease;
         }
-        
+
         .nav-links a:hover {
             color: var(--primary);
         }
-        
+
         .nav-links a:hover:after {
             width: 100%;
         }
-        
+
         .mobile-menu {
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
             color: var(--primary);
         }
-        
+
         /* 章节通用样式 */
         section {
             min-height: 100vh;
@@ -138,18 +138,18 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             width: 100%;
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 60px;
         }
-        
+
         .section-title h2 {
             font-size: 3rem;
             margin-bottom: 20px;
@@ -158,7 +158,7 @@
             position: relative;
             display: inline-block;
         }
-        
+
         .section-title h2:after {
             content: '';
             position: absolute;
@@ -171,14 +171,14 @@
             border-radius: 2px;
             box-shadow: 0 0 10px var(--primary);
         }
-        
+
         .section-title p {
             font-size: 1.2rem;
             color: rgba(255, 255, 255, 0.8);
             max-width: 700px;
             margin: 0 auto;
         }
-        
+
         /* 按钮样式 */
         .btn {
             display: inline-block;
@@ -198,7 +198,7 @@
             overflow: hidden;
             z-index: 1;
         }
-        
+
         .btn:before {
             content: '';
             position: absolute;
@@ -210,27 +210,27 @@
             transition: all 0.5s ease;
             z-index: -1;
         }
-        
+
         .btn:hover {
             color: var(--darker);
             box-shadow: 0 0 20px var(--primary);
         }
-        
+
         .btn:hover:before {
             left: 0;
         }
-        
+
         /* 英雄区域 */
         .hero {
             background: linear-gradient(rgba(1, 1, 43, 0.9), rgba(0, 1, 26, 0.9));
             text-align: center;
         }
-        
+
         .hero-content {
             max-width: 900px;
             margin: 0 auto;
         }
-        
+
         .hero h1 {
             font-size: 4.5rem;
             margin-bottom: 20px;
@@ -242,70 +242,70 @@
             color: transparent;
             animation: textGlow 3s infinite alternate;
         }
-        
+
         .hero p {
             font-size: 1.3rem;
             margin-bottom: 40px;
             color: rgba(255, 255, 255, 0.8);
         }
-        
+
         .hero-buttons {
             display: flex;
             justify-content: center;
             gap: 20px;
         }
-        
+
         .hero-svg-container {
             margin-top: 50px;
             height: 300px;
             position: relative;
         }
-        
+
         /* 关于我们 */
         .about {
             background: linear-gradient(45deg, rgba(1, 1, 43, 0.9), rgba(5, 217, 232, 0.1));
         }
-        
+
         .about-content {
             display: flex;
             align-items: center;
             gap: 60px;
         }
-        
+
         .about-text {
             flex: 1;
         }
-        
+
         .about-text h3 {
             font-size: 2.5rem;
             color: var(--primary);
             margin-bottom: 30px;
             text-transform: uppercase;
         }
-        
+
         .about-text p {
             margin-bottom: 20px;
             color: rgba(255, 255, 255, 0.8);
             font-size: 1.1rem;
         }
-        
+
         .about-svg-container {
             flex: 1;
             height: 400px;
             position: relative;
         }
-        
+
         /* 医疗解决方案 */
         .medical-solutions {
             background: linear-gradient(135deg, rgba(1, 1, 43, 0.9), rgba(255, 42, 109, 0.1));
         }
-        
+
         .solutions-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
         }
-        
+
         .solution-card {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 15px;
@@ -317,7 +317,7 @@
             position: relative;
             z-index: 1;
         }
-        
+
         .solution-card:before {
             content: '';
             position: absolute;
@@ -330,16 +330,16 @@
             transition: transform 0.6s ease;
             z-index: -1;
         }
-        
+
         .solution-card:hover {
             transform: translateY(-15px);
             box-shadow: 0 20px 40px rgba(0, 243, 255, 0.3);
         }
-        
+
         .solution-card:hover:before {
             transform: translateX(100%);
         }
-        
+
         .solution-svg-container {
             height: 200px;
             background: linear-gradient(135deg, var(--primary), var(--accent));
@@ -348,33 +348,33 @@
             justify-content: center;
             clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
-        
+
         .solution-content {
             padding: 30px;
         }
-        
+
         .solution-content h3 {
             font-size: 1.8rem;
             color: var(--primary);
             margin-bottom: 15px;
         }
-        
+
         .solution-content p {
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 20px;
         }
-        
+
         /* 案例展示 */
         .case-studies {
             background: linear-gradient(45deg, rgba(1, 1, 43, 0.9), rgba(5, 217, 232, 0.1));
         }
-        
+
         .case-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 40px;
         }
-        
+
         .case-card {
             border-radius: 15px;
             overflow: hidden;
@@ -384,69 +384,69 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .case-card:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: 0 20px 40px rgba(255, 42, 109, 0.3);
         }
-        
+
         .case-svg-container {
             height: 200px;
             position: relative;
             background: rgba(0, 0, 0, 0.2);
         }
-        
+
         .case-content {
             padding: 25px;
         }
-        
+
         .case-content h3 {
             font-size: 1.5rem;
             color: var(--primary);
             margin-bottom: 15px;
         }
-        
+
         .case-content p {
             color: rgba(255, 255, 255, 0.8);
             margin-bottom: 20px;
         }
-        
+
         .case-stats {
             display: flex;
             justify-content: space-between;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             padding-top: 20px;
         }
-        
+
         .stat {
             text-align: center;
         }
-        
+
         .stat-value {
             font-size: 1.8rem;
             font-weight: 700;
             color: var(--secondary);
             text-shadow: 0 0 10px rgba(255, 42, 109, 0.5);
         }
-        
+
         .stat-label {
             font-size: 0.9rem;
             color: rgba(255, 255, 255, 0.7);
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        
+
         /* 技术优势 */
         .technology {
             background: linear-gradient(135deg, rgba(1, 1, 43, 0.9), rgba(255, 42, 109, 0.1));
         }
-        
+
         .tech-features {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
         }
-        
+
         .tech-feature {
             text-align: center;
             padding: 40px 20px;
@@ -458,7 +458,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .tech-feature:before {
             content: '';
             position: absolute;
@@ -468,52 +468,52 @@
             height: 5px;
             background: linear-gradient(90deg, var(--primary), var(--secondary));
         }
-        
+
         .tech-feature:hover {
             transform: translateY(-15px);
             box-shadow: 0 20px 40px rgba(0, 243, 255, 0.2);
         }
-        
+
         .tech-svg-container {
             height: 100px;
             margin-bottom: 25px;
         }
-        
+
         .tech-feature h3 {
             font-size: 1.5rem;
             margin-bottom: 15px;
             color: var(--light);
         }
-        
+
         .tech-feature p {
             opacity: 0.8;
             font-size: 1rem;
         }
-        
+
         /* 联系我们 */
         .contact {
             background: linear-gradient(45deg, rgba(1, 1, 43, 0.9), rgba(5, 217, 232, 0.1));
         }
-        
+
         .contact-content {
             display: flex;
             gap: 60px;
         }
-        
+
         .contact-info {
             flex: 1;
         }
-        
+
         .contact-form {
             flex: 1;
         }
-        
+
         .contact-item {
             display: flex;
             margin-bottom: 30px;
             align-items: center;
         }
-        
+
         .contact-icon {
             background: linear-gradient(135deg, var(--primary), var(--accent));
             color: var(--darker);
@@ -528,34 +528,34 @@
             flex-shrink: 0;
             box-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
         }
-        
+
         .contact-details h3 {
             font-size: 1.3rem;
             margin-bottom: 5px;
             color: var(--primary);
         }
-        
+
         .contact-details p {
             color: rgba(255, 255, 255, 0.8);
         }
-        
+
         .contact-svg-container {
             height: 400px;
             margin-top: 30px;
         }
-        
+
         .form-group {
             margin-bottom: 25px;
             position: relative;
         }
-        
+
         .form-group label {
             display: block;
             margin-bottom: 10px;
             color: var(--light);
             font-weight: 500;
         }
-        
+
         .form-control {
             width: 100%;
             padding: 15px;
@@ -567,32 +567,32 @@
             color: var(--light);
             backdrop-filter: blur(10px);
         }
-        
+
         .form-control:focus {
             border-color: var(--primary);
             outline: none;
             box-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
         }
-        
+
         textarea.form-control {
             min-height: 150px;
             resize: vertical;
         }
-        
+
         /* 页脚 */
         footer {
             background: linear-gradient(to bottom, var(--darker), #000);
             color: white;
             padding: 80px 0 30px;
         }
-        
+
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 50px;
             margin-bottom: 50px;
         }
-        
+
         .footer-column h3 {
             font-size: 1.5rem;
             margin-bottom: 25px;
@@ -600,32 +600,32 @@
             text-transform: uppercase;
             letter-spacing: 1px;
         }
-        
+
         .footer-links {
             list-style: none;
         }
-        
+
         .footer-links li {
             margin-bottom: 12px;
         }
-        
+
         .footer-links a {
             color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
             transition: all 0.3s ease;
         }
-        
+
         .footer-links a:hover {
             color: var(--primary);
             padding-left: 5px;
         }
-        
+
         .social-links {
             display: flex;
             gap: 15px;
             margin-top: 20px;
         }
-        
+
         .social-links a {
             display: flex;
             align-items: center;
@@ -638,13 +638,13 @@
             transition: all 0.3s ease;
             font-size: 1.2rem;
         }
-        
+
         .social-links a:hover {
             background: var(--primary);
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(0, 243, 255, 0.4);
         }
-        
+
         .copyright {
             text-align: center;
             padding-top: 30px;
@@ -652,13 +652,13 @@
             color: rgba(255, 255, 255, 0.5);
             font-size: 0.9rem;
         }
-        
+
         /* SVG样式 */
         svg {
             width: 100%;
             height: 100%;
         }
-        
+
         .drone-path {
             stroke: var(--primary);
             stroke-width: 2;
@@ -667,38 +667,38 @@
             stroke-dashoffset: 1000;
             animation: drawPath 8s linear infinite;
         }
-        
+
         .pulse-circle {
             fill: var(--primary);
             opacity: 0.7;
             animation: pulse 2s infinite;
         }
-        
+
         .signal-wave {
             stroke: var(--accent);
             stroke-width: 2;
             fill: none;
             opacity: 0.7;
         }
-        
+
         .signal-1 {
             animation: signalPulse 3s infinite;
         }
-        
+
         .signal-2 {
             animation: signalPulse 3s infinite 0.5s;
         }
-        
+
         .signal-3 {
             animation: signalPulse 3s infinite 1s;
         }
-        
+
         .drone-body {
             fill: #333;
             stroke: var(--primary);
             stroke-width: 2;
         }
-        
+
         .drone-rotor {
             fill: #555;
             stroke: var(--accent);
@@ -706,23 +706,23 @@
             transform-origin: center;
             animation: rotorSpin 0.5s linear infinite;
         }
-        
+
         .medical-cross {
             fill: var(--secondary);
             animation: pulse 2s infinite;
         }
-        
+
         .city-building {
             fill: #1a1a3a;
             stroke: var(--primary);
             stroke-width: 1;
         }
-        
+
         .city-window {
             fill: var(--accent);
             animation: windowGlow 3s infinite alternate;
         }
-        
+
         .data-line {
             stroke: var(--primary);
             stroke-width: 2;
@@ -731,12 +731,12 @@
             stroke-dashoffset: 1000;
             animation: drawPath 6s linear infinite;
         }
-        
+
         .data-node {
             fill: var(--secondary);
             animation: nodePulse 2s infinite alternate;
         }
-        
+
         /* 动画定义 */
         @keyframes pulse {
             0% {
@@ -752,7 +752,7 @@
                 opacity: 0.7;
             }
         }
-        
+
         @keyframes textGlow {
             0% {
                 text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
@@ -761,13 +761,13 @@
                 text-shadow: 0 0 20px rgba(0, 243, 255, 0.8), 0 0 30px rgba(0, 243, 255, 0.6);
             }
         }
-        
+
         @keyframes drawPath {
             to {
                 stroke-dashoffset: 0;
             }
         }
-        
+
         @keyframes rotorSpin {
             from {
                 transform: rotate(0deg);
@@ -776,7 +776,7 @@
                 transform: rotate(360deg);
             }
         }
-        
+
         @keyframes signalPulse {
             0% {
                 transform: scale(1);
@@ -787,7 +787,7 @@
                 opacity: 0;
             }
         }
-        
+
         @keyframes windowGlow {
             0% {
                 opacity: 0.3;
@@ -796,7 +796,7 @@
                 opacity: 1;
             }
         }
-        
+
         @keyframes nodePulse {
             0% {
                 transform: scale(1);
@@ -805,52 +805,52 @@
                 transform: scale(1.2);
             }
         }
-        
+
         /* 滚动动画 */
         .fade-in {
             opacity: 0;
             transform: translateY(30px);
             transition: all 0.8s ease;
         }
-        
+
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
         }
-        
+
         /* 响应式设计 */
         @media (max-width: 992px) {
             .about-content, .contact-content {
                 flex-direction: column;
             }
-            
+
             .hero h1 {
                 font-size: 3.5rem;
             }
-            
+
             .section-title h2 {
                 font-size: 2.5rem;
             }
         }
-        
+
         @media (max-width: 768px) {
             .nav-links {
                 display: none;
             }
-            
+
             .mobile-menu {
                 display: block;
             }
-            
+
             .hero h1 {
                 font-size: 2.8rem;
             }
-            
+
             .hero-buttons {
                 flex-direction: column;
                 align-items: center;
             }
-            
+
             .section-title h2 {
                 font-size: 2rem;
             }
@@ -883,7 +883,7 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1>无人机医疗配送解决方案</h1>
+                <h1>低空医疗配送解决方案专家</h1>
                 <p>突破地理限制，重塑急救物流，为生命争取每一秒</p>
                 <div class="hero-buttons">
                     <a href="#solutions" class="btn">探索解决方案</a>
@@ -893,18 +893,18 @@
                     <svg viewBox="0 0 800 300" preserveAspectRatio="xMidYMid meet">
                         <!-- 城市天际线 -->
                         <rect x="0" y="200" width="800" height="100" fill="#0a0a2a" />
-                        
+
                         <!-- 建筑物 -->
                         <rect x="50" y="150" width="40" height="150" class="city-building" />
                         <rect x="55" y="160" width="10" height="10" class="city-window" />
                         <rect x="75" y="160" width="10" height="10" class="city-window" />
-                        
+
                         <rect x="120" y="120" width="50" height="180" class="city-building" />
                         <rect x="130" y="130" width="10" height="10" class="city-window" />
                         <rect x="150" y="130" width="10" height="10" class="city-window" />
                         <rect x="130" y="150" width="10" height="10" class="city-window" />
                         <rect x="150" y="150" width="10" height="10" class="city-window" />
-                        
+
                         <rect x="200" y="100" width="60" height="200" class="city-building" />
                         <rect x="210" y="110" width="10" height="10" class="city-window" />
                         <rect x="240" y="110" width="10" height="10" class="city-window" />
@@ -912,20 +912,20 @@
                         <rect x="240" y="130" width="10" height="10" class="city-window" />
                         <rect x="210" y="150" width="10" height="10" class="city-window" />
                         <rect x="240" y="150" width="10" height="10" class="city-window" />
-                        
+
                         <rect x="300" y="130" width="40" height="170" class="city-building" />
                         <rect x="310" y="140" width="10" height="10" class="city-window" />
                         <rect x="330" y="140" width="10" height="10" class="city-window" />
-                        
+
                         <rect x="380" y="160" width="50" height="140" class="city-building" />
                         <rect x="390" y="170" width="10" height="10" class="city-window" />
                         <rect x="410" y="170" width="10" height="10" class="city-window" />
                         <rect x="430" y="170" width="10" height="10" class="city-window" />
-                        
+
                         <rect x="470" y="140" width="40" height="160" class="city-building" />
                         <rect x="480" y="150" width="10" height="10" class="city-window" />
                         <rect x="500" y="150" width="10" height="10" class="city-window" />
-                        
+
                         <rect x="550" y="110" width="60" height="190" class="city-building" />
                         <rect x="560" y="120" width="10" height="10" class="city-window" />
                         <rect x="590" y="120" width="10" height="10" class="city-window" />
@@ -933,14 +933,14 @@
                         <rect x="590" y="140" width="10" height="10" class="city-window" />
                         <rect x="560" y="160" width="10" height="10" class="city-window" />
                         <rect x="590" y="160" width="10" height="10" class="city-window" />
-                        
+
                         <rect x="680" y="150" width="40" height="150" class="city-building" />
                         <rect x="690" y="160" width="10" height="10" class="city-window" />
                         <rect x="710" y="160" width="10" height="10" class="city-window" />
-                        
+
                         <!-- 无人机飞行路径 -->
                         <path d="M 0,100 Q 200,50 400,150 T 800,100" class="drone-path" />
-                        
+
                         <!-- 无人机 -->
                         <g id="drone" transform="translate(400,150)">
                             <rect x="-15" y="-5" width="30" height="10" class="drone-body" />
@@ -949,7 +949,7 @@
                             <circle cx="0" cy="-15" r="5" class="drone-rotor" />
                             <circle cx="0" cy="15" r="5" class="drone-rotor" />
                         </g>
-                        
+
                         <!-- 医疗标志 -->
                         <g transform="translate(200, 80)">
                             <rect x="-15" y="-25" width="30" height="50" fill="none" stroke="var(--secondary)" stroke-width="3" />
@@ -957,7 +957,7 @@
                             <line x1="0" y1="-30" x2="0" y2="30" stroke="var(--secondary)" stroke-width="3" />
                             <line x1="-30" y1="0" x2="30" y2="0" stroke="var(--secondary)" stroke-width="3" />
                         </g>
-                        
+
                         <!-- 信号波 -->
                         <circle cx="600" cy="80" r="10" class="signal-wave signal-1" />
                         <circle cx="600" cy="80" r="20" class="signal-wave signal-2" />
@@ -973,14 +973,13 @@
         <div class="container">
             <div class="section-title fade-in">
                 <h2>关于我们</h2>
-                <p>云端漫步（济南）航空科技有限公司，专注于低空经济与无人机医疗配送解决方案</p>
+                <p>云端漫步（济南）航空科技有限责任公司，专注于低空经济与无人机医疗配送解决方案</p>
             </div>
             <div class="about-content">
                 <div class="about-text fade-in">
                     <h3>引领低空医疗物流新时代</h3>
                     <p>作为低空经济行业应用解决方案专家，我们致力于通过先进无人机技术解决医疗配送难题。在紧急医疗物资运输、偏远地区医疗支持、城市急救响应等领域，我们的解决方案正在重塑传统医疗物流体系。</p>
-                    <p>我们自主研发的智能无人机配送系统，整合了5G通信、人工智能路径规划和全天候飞行技术，确保医疗物资在最短时间内安全送达目的地。</p>
-                    <p>目前，我们的服务已覆盖全国20多个省市，与超过50家医疗机构建立合作关系，累计完成医疗配送任务超过10,000次，为急救患者争取了宝贵的时间。</p>
+                    <p>智能无人机配送系统，整合了5G通信、人工智能路径规划和全天候飞行技术，确保医疗物资在最短时间内安全送达目的地。</p>
                     <a href="#contact" class="btn">了解更多</a>
                 </div>
                 <div class="about-svg-container fade-in">
@@ -991,7 +990,7 @@
                         <circle cx="500" cy="100" r="8" class="data-node" />
                         <circle cx="200" cy="300" r="8" class="data-node" />
                         <circle cx="400" cy="300" r="8" class="data-node" />
-                        
+
                         <!-- 连接线 -->
                         <line x1="100" y1="100" x2="300" y2="150" class="data-line" />
                         <line x1="300" y1="150" x2="500" y2="100" class="data-line" />
@@ -999,11 +998,11 @@
                         <line x1="300" y1="150" x2="400" y2="300" class="data-line" />
                         <line x1="500" y1="100" x2="400" y2="300" class="data-line" />
                         <line x1="200" y1="300" x2="400" y2="300" class="data-line" />
-                        
+
                         <!-- 中心节点 -->
                         <circle cx="300" cy="200" r="15" fill="var(--primary)" />
                         <circle cx="300" cy="200" r="25" fill="none" stroke="var(--primary)" stroke-width="2" class="pulse-circle" />
-                        
+
                         <!-- 无人机图标 -->
                         <g transform="translate(300, 200) scale(1.5)">
                             <rect x="-10" y="-3" width="20" height="6" class="drone-body" />
@@ -1012,7 +1011,7 @@
                             <circle cx="0" cy="-10" r="4" class="drone-rotor" />
                             <circle cx="0" cy="10" r="4" class="drone-rotor" />
                         </g>
-                        
+
                         <!-- 数据流动画 -->
                         <circle cx="100" cy="100" r="3" fill="var(--accent)">
                             <animateMotion dur="3s" repeatCount="indefinite" path="M 0,0 L 200,50" />
@@ -1046,11 +1045,11 @@
                             <line x1="110" y1="90" x2="190" y2="90" stroke="var(--secondary)" stroke-width="2" />
                             <line x1="110" y1="100" x2="190" y2="100" stroke="var(--secondary)" stroke-width="2" />
                             <line x1="110" y1="110" x2="190" y2="110" stroke="var(--secondary)" stroke-width="2" />
-                            
+
                             <!-- 医疗十字 -->
                             <rect x="140" y="40" width="20" height="40" fill="var(--secondary)" />
                             <rect x="130" y="50" width="40" height="20" fill="var(--secondary)" />
-                            
+
                             <!-- 无人机 -->
                             <g transform="translate(150, 30) scale(0.8)">
                                 <rect x="-8" y="-2" width="16" height="4" class="drone-body" />
@@ -1059,7 +1058,7 @@
                                 <circle cx="0" cy="-8" r="3" class="drone-rotor" />
                                 <circle cx="0" cy="8" r="3" class="drone-rotor" />
                             </g>
-                            
+
                             <!-- 脉冲效果 -->
                             <circle cx="150" cy="30" r="5" class="pulse-circle" />
                         </svg>
@@ -1068,7 +1067,7 @@
                         <h3>急救药品配送</h3>
                         <p>为急救场景提供药品、血浆、疫苗等关键医疗物资的快速配送，突破城市交通限制，将配送时间从传统方式的1小时以上缩短至10-15分钟。</p>
                         <p>采用恒温运输箱，确保药品在运输过程中保持适宜温度。</p>
-                        <a href="#" class="btn">了解更多</a>
+                        <!--<a href="#" class="btn">了解更多</a>-->
                     </div>
                 </div>
                 <div class="solution-card fade-in">
@@ -1079,11 +1078,11 @@
                             <rect x="135" y="85" width="30" height="30" fill="#660000" />
                             <line x1="135" y1="100" x2="165" y2="100" stroke="#ff4d4d" stroke-width="2" />
                             <line x1="135" y1="110" x2="165" y2="110" stroke="#ff4d4d" stroke-width="2" />
-                            
+
                             <!-- 医疗十字 -->
                             <rect x="140" y="40" width="20" height="40" fill="var(--secondary)" />
                             <rect x="130" y="50" width="40" height="20" fill="var(--secondary)" />
-                            
+
                             <!-- 无人机 -->
                             <g transform="translate(150, 30) scale(0.8)">
                                 <rect x="-8" y="-2" width="16" height="4" class="drone-body" />
@@ -1092,7 +1091,7 @@
                                 <circle cx="0" cy="-8" r="3" class="drone-rotor" />
                                 <circle cx="0" cy="8" r="3" class="drone-rotor" />
                             </g>
-                            
+
                             <!-- 温度计 -->
                             <rect x="200" y="70" width="10" height="60" fill="#333" stroke="var(--primary)" stroke-width="1" />
                             <rect x="202" y="72" width="6" height="56" fill="#1a1a1a" />
@@ -1104,7 +1103,7 @@
                         <h3>血液与血浆运输</h3>
                         <p>为血站与医院之间搭建空中血液运输通道，特别是在交通拥堵时段或偏远地区，确保血液制品快速安全送达。</p>
                         <p>配备专用恒温血箱和实时监控系统，确保血液品质。</p>
-                        <a href="#" class="btn">了解更多</a>
+                        <!--<a href="#" class="btn">了解更多</a>-->
                     </div>
                 </div>
                 <div class="solution-card fade-in">
@@ -1116,10 +1115,10 @@
                             <line x1="120" y1="90" x2="180" y2="90" stroke="var(--accent)" stroke-width="2" />
                             <line x1="120" y1="100" x2="180" y2="100" stroke="var(--accent)" stroke-width="2" />
                             <line x1="120" y1="110" x2="180" y2="110" stroke="var(--accent)" stroke-width="2" />
-                            
+
                             <!-- 心脏图标 -->
                             <path d="M 150,40 C 130,20 100,30 100,50 C 100,70 150,90 150,90 C 150,90 200,70 200,50 C 200,30 170,20 150,40 Z" fill="var(--secondary)" />
-                            
+
                             <!-- 无人机 -->
                             <g transform="translate(150, 30) scale(0.8)">
                                 <rect x="-8" y="-2" width="16" height="4" class="drone-body" />
@@ -1128,7 +1127,7 @@
                                 <circle cx="0" cy="-8" r="3" class="drone-rotor" />
                                 <circle cx="0" cy="8" r="3" class="drone-rotor" />
                             </g>
-                            
+
                             <!-- 监控信号 -->
                             <circle cx="220" cy="50" r="8" class="signal-wave signal-1" />
                             <circle cx="220" cy="50" r="16" class="signal-wave signal-2" />
@@ -1139,7 +1138,7 @@
                         <h3>器官移植运输</h3>
                         <p>为器官移植手术提供快速安全的器官运输服务，通过专用器官运输箱和实时监控系统，确保器官在最佳状态下送达。</p>
                         <p>与多家器官移植中心合作，建立了全国性的器官运输网络。</p>
-                        <a href="#" class="btn">了解更多</a>
+                        <!--<a href="#" class="btn">了解更多</a>-->
                     </div>
                 </div>
             </div>
@@ -1159,16 +1158,16 @@
                         <svg viewBox="0 0 300 200" preserveAspectRatio="xMidYMid meet">
                             <!-- 武汉地图轮廓 -->
                             <path d="M 50,50 L 100,30 L 150,50 L 200,40 L 250,60 L 250,150 L 200,170 L 150,160 L 100,170 L 50,150 Z" fill="rgba(10,10,42,0.5)" stroke="var(--primary)" stroke-width="2" />
-                            
+
                             <!-- 医院位置 -->
                             <circle cx="100" cy="100" r="8" fill="var(--secondary)" class="pulse-circle" />
-                            
+
                             <!-- 血站位置 -->
                             <circle cx="200" cy="120" r="8" fill="var(--accent)" class="pulse-circle" />
-                            
+
                             <!-- 飞行路径 -->
                             <path d="M 100,100 Q 150,80 200,120" class="drone-path" />
-                            
+
                             <!-- 无人机 -->
                             <g transform="translate(150, 90)">
                                 <rect x="-6" y="-2" width="12" height="4" class="drone-body" />
@@ -1177,15 +1176,15 @@
                                 <circle cx="0" cy="-6" r="2" class="drone-rotor" />
                                 <circle cx="0" cy="6" r="2" class="drone-rotor" />
                             </g>
-                            
+
                             <!-- 数据标签 -->
                             <text x="100" y="90" text-anchor="middle" fill="var(--primary)" font-size="12">医院</text>
                             <text x="200" y="110" text-anchor="middle" fill="var(--accent)" font-size="12">血站</text>
                         </svg>
                     </div>
                     <div class="case-content">
-                        <h3>武汉血液运输航线</h3>
-                        <p>与武汉市血液中心合作，建立了城市血液无人机配送网络，将血液制品配送时间缩短了75%，特别是在高峰时段效果显著。</p>
+                        <h3>血液运输航线</h3>
+                        <p>与血液中心合作，建立了城市血液无人机配送网络，将血液制品配送时间缩短了，特别是在高峰时段效果显著。</p>
                         <div class="case-stats">
                             <div class="stat">
                                 <div class="stat-value">75%</div>
@@ -1207,16 +1206,16 @@
                         <svg viewBox="0 0 300 200" preserveAspectRatio="xMidYMid meet">
                             <!-- 山区地形 -->
                             <path d="M 0,150 L 50,120 L 100,140 L 150,100 L 200,130 L 250,110 L 300,150 L 300,200 L 0,200 Z" fill="rgba(20,30,20,0.7)" stroke="var(--accent)" stroke-width="1" />
-                            
+
                             <!-- 村庄位置 -->
                             <circle cx="80" cy="130" r="6" fill="var(--primary)" class="pulse-circle" />
-                            
+
                             <!-- 乡镇医院位置 -->
                             <circle cx="220" cy="110" r="6" fill="var(--secondary)" class="pulse-circle" />
-                            
+
                             <!-- 飞行路径 -->
                             <path d="M 80,130 Q 150,80 220,110" class="drone-path" />
-                            
+
                             <!-- 无人机 -->
                             <g transform="translate(150, 100)">
                                 <rect x="-6" y="-2" width="12" height="4" class="drone-body" />
@@ -1225,15 +1224,15 @@
                                 <circle cx="0" cy="-6" r="2" class="drone-rotor" />
                                 <circle cx="0" cy="6" r="2" class="drone-rotor" />
                             </g>
-                            
+
                             <!-- 数据标签 -->
                             <text x="80" y="120" text-anchor="middle" fill="var(--primary)" font-size="12">村庄</text>
                             <text x="220" y="100" text-anchor="middle" fill="var(--secondary)" font-size="12">乡镇医院</text>
                         </svg>
                     </div>
                     <div class="case-content">
-                        <h3>云南山区医疗配送</h3>
-                        <p>在云南偏远山区建立无人机医疗配送网络，解决了山区医疗物资配送难题，为当地居民提供及时的医疗支持。</p>
+                        <h3>山区医疗配送</h3>
+                        <p>在偏远山区建立无人机医疗配送网络，解决了山区医疗物资配送难题，为当地居民提供及时的医疗支持。</p>
                         <div class="case-stats">
                             <div class="stat">
                                 <div class="stat-value">4H</div>
@@ -1261,16 +1260,16 @@
                             <line x1="50" y1="75" x2="250" y2="75" stroke="var(--primary)" stroke-width="1" opacity="0.5" />
                             <line x1="50" y1="100" x2="250" y2="100" stroke="var(--primary)" stroke-width="1" opacity="0.5" />
                             <line x1="50" y1="125" x2="250" y2="125" stroke="var(--primary)" stroke-width="1" opacity="0.5" />
-                            
+
                             <!-- 急救中心位置 -->
                             <circle cx="100" cy="100" r="8" fill="var(--secondary)" class="pulse-circle" />
-                            
+
                             <!-- 医院位置 -->
                             <circle cx="200" cy="100" r="8" fill="var(--accent)" class="pulse-circle" />
-                            
+
                             <!-- 飞行路径 -->
                             <path d="M 100,100 L 200,100" class="drone-path" />
-                            
+
                             <!-- 无人机 -->
                             <g transform="translate(150, 100)">
                                 <rect x="-6" y="-2" width="12" height="4" class="drone-body" />
@@ -1279,15 +1278,15 @@
                                 <circle cx="0" cy="-6" r="2" class="drone-rotor" />
                                 <circle cx="0" cy="6" r="2" class="drone-rotor" />
                             </g>
-                            
+
                             <!-- 数据标签 -->
                             <text x="100" y="90" text-anchor="middle" fill="var(--secondary)" font-size="12">急救中心</text>
                             <text x="200" y="90" text-anchor="middle" fill="var(--accent)" font-size="12">医院</text>
                         </svg>
                     </div>
                     <div class="case-content">
-                        <h3>上海急救药品配送</h3>
-                        <p>与上海急救中心合作，为城市急救网络提供无人机配送支持，在紧急情况下快速送达急救药品和设备。</p>
+                        <h3>急救药品配送</h3>
+                        <p>与急救中心合作，为城市急救网络提供无人机配送支持，在紧急情况下快速送达急救药品和设备。</p>
                         <div class="case-stats">
                             <div class="stat">
                                 <div class="stat-value">15MIN</div>
@@ -1313,7 +1312,7 @@
         <div class="container">
             <div class="section-title fade-in">
                 <h2>技术优势</h2>
-                <p>自主研发的核心技术，确保无人机医疗配送的安全、高效和可靠</p>
+                <p>研发的核心技术，确保无人机医疗配送的安全、高效和可靠</p>
             </div>
             <div class="tech-features">
                 <div class="tech-feature fade-in">
@@ -1409,7 +1408,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>公司地址</h3>
-                            <p>山东省济南市高新区航天科技园区创新大厦A座15层</p>
+                            <p>山东省济南市高新区经十路7777号碧桂园凤凰中心B座2021-1</p>
                         </div>
                     </div>
                     <div class="contact-item fade-in">
@@ -1418,7 +1417,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>联系电话</h3>
-                            <p>+86 531-8888 6666</p>
+                            <p>17514009006</p>
                         </div>
                     </div>
                     <div class="contact-item fade-in">
@@ -1427,7 +1426,7 @@
                         </div>
                         <div class="contact-details">
                             <h3>电子邮箱</h3>
-                            <p>contact@cloudwalkaero.com</p>
+                            <p>market@cloudwalkaero.com</p>
                         </div>
                     </div>
                     <div class="contact-item fade-in">
@@ -1525,8 +1524,8 @@
                 <div class="footer-column">
                     <h3>联系信息</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-location-dot"></i> 济南市高新区航天科技园区</li>
-                        <li><i class="fas fa-phone"></i> +86 531-8888 6666</li>
+                        <li><i class="fas fa-location-dot"></i> 山东省济南市高新区经十路7777号碧桂园凤凰中心B座2021-1</li>
+                        <li><i class="fas fa-phone"></i> 17514009006</li>
                         <li><i class="fas fa-envelope"></i> contact@cloudwalkaero.com</li>
                         <li><i class="fas fa-globe"></i> www.cloudwalkaero.com</li>
                     </ul>
@@ -1550,23 +1549,23 @@
                 header.style.boxShadow = 'none';
             }
         });
-        
+
         // 移动端菜单切换
         document.querySelector('.mobile-menu').addEventListener('click', function() {
             const navLinks = document.querySelector('.nav-links');
             navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
         });
-        
+
         // 表单提交
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('感谢您的咨询，我们会尽快与您联系！');
             this.reset();
         });
-        
+
         // 滚动动画
         const fadeElements = document.querySelectorAll('.fade-in');
-        
+
         const fadeInObserver = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -1574,26 +1573,26 @@
                 }
             });
         }, { threshold: 0.1 });
-        
+
         fadeElements.forEach(element => {
             fadeInObserver.observe(element);
         });
-        
+
         // 无人机动画
         const drone = document.querySelector('#drone');
         let position = 0;
-        
+
         function animateDrone() {
             position += 0.5;
             if (position > 800) position = 0;
-            
+
             const x = position;
             const y = 100 + 50 * Math.sin(position / 100);
-            
+
             drone.setAttribute('transform', `translate(${x},${y})`);
             requestAnimationFrame(animateDrone);
         }
-        
+
         animateDrone();
     </script>
 </body>
